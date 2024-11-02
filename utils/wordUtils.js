@@ -1,4 +1,7 @@
-export const generateWords = (letters) => {
+import fs from 'fs';
+import path from 'path';
+
+export const generateWords = (letters, wordList) => {
   const results = [];
 
   const permute = (arr, m = []) => {
@@ -15,5 +18,11 @@ export const generateWords = (letters) => {
 
   permute(letters.split(''));
 
-  return results;
+  return results.filter(word => wordList.includes(word));
+};
+
+export const loadWordList = () => {
+  const filePath = path.join(__dirname, '../assets/nederlands.txt');
+  const data = fs.readFileSync(filePath, 'utf-8');
+  return data.split('\n').map(word => word.trim());
 };

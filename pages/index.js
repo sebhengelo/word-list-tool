@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import WordList from '../components/WordList';
-import { generateWords } from '../utils/wordUtils';
+import { generateWords, loadWordList } from '../utils/wordUtils';
 
 export default function Home() {
   const [letters, setLetters] = useState('');
   const [words, setWords] = useState([]);
+  const [wordList, setWordList] = useState([]);
+
+  useEffect(() => {
+    const fetchWordList = async () => {
+      const loadedWordList = loadWordList();
+      setWordList(loadedWordList);
+    };
+
+    fetchWordList();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const generatedWords = generateWords(letters);
+    const generatedWords = generateWords(letters, wordList);
     setWords(generatedWords);
   };
 
