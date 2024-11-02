@@ -1,0 +1,20 @@
+{
+  "name": "word-spelling-application",
+  "version": "1.0.0",
+  "description": "A web application that lists out all different words that can be spelled with a given set of letters.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^2.2.19",
+    "preline": "^1.0.0"
+  }
+}
