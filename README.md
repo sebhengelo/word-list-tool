@@ -28,3 +28,7 @@ This project is a web application built with NextJS, Tailwind CSS, and the Preli
 2. Enter a few letters in the input field.
 3. Click the "Generate Words" button.
 4. The application will display a list of words that can be formed with the input letters.
+
+## Word List Loading
+
+The application now supports loading a word list from a remote URL. The word list is used as a reference for the possible words to generate. The words are fetched and parsed from the provided URL when the application loads.
